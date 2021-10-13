@@ -1,3 +1,4 @@
+// Importing the router.
 const apiRoutes = require("./api");
 const router = require("express").Router();
 

@@ -33,7 +33,7 @@ router.put("/:id", async ({ params, body }, res) => {
     res.status(500).json(err);
   }
 });
-// Gets all the exercises associated with a workout and shows the information as a chart on the front end.
+// This app uses Chart.js. This routes gets all the exercises associated with a workout and shows the information as a chart on the front end.
 router.get("/range", (req, res) => {
   try {
     const workouts = await db.Workout.find({});
