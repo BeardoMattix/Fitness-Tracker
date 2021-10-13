@@ -18,3 +18,23 @@ router.post("/", async ({ body }, res) => {
     res.status(500).json(err);
   }
 });
+
+router.put("/:id", async ({ params, body }, res) => {
+  try {
+    const updatedWorkout = await db.Workout.findByIdAndUpdate(
+      params.id,
+      { $push: { exercise: body } },
+      { new: true }
+    );
+    res.status(200).json(updatedWorkout);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/range", (req, res) => {
+  try {
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
