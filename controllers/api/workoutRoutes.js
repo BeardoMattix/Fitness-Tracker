@@ -21,11 +21,11 @@ router.post("/", async ({ body }, res) => {
   }
 });
 // Updates a workout with information from the user input and adds it to the db.
-router.put("/:id", async ({ params, body }, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedWorkout = await db.Workout.findByIdAndUpdate(
-      params.id,
-      { $push: { exercise: body } },
+      req.params.id,
+      { $push: { exercise: req.body } },
       { new: true }
     );
     res.status(200).json(updatedWorkout);
@@ -33,7 +33,7 @@ router.put("/:id", async ({ params, body }, res) => {
     res.status(500).json(err);
   }
 });
-// This app uses Chart.js. This routes gets all the exercises associated with a workout and shows the information as a chart on the front end.
+// This app uses Chart.js. This route gets all the exercises associated with a workout and shows the information as a chart on the front end.
 router.get("/range", (req, res) => {
   try {
   } catch (err) {
