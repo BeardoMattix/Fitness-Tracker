@@ -1,3 +1,4 @@
+// Importing the necessary packages for the server.
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
@@ -14,7 +15,7 @@ app.use(express.static("public"));
 
 app.use("/", routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", {
+mongoose.connect("mongodb://localhost/workoutdb", {
   useNewParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
