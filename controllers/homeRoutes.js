@@ -1,4 +1,4 @@
-//TODO: Update this with the home routes
+// Imports the express router and the path the router uses.
 const router = require("express").Router();
 const path = require("path");
 
