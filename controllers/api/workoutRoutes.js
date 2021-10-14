@@ -25,7 +25,7 @@ router.put("/:id", async (req, res) => {
   try {
     const updatedWorkout = await db.Workout.findByIdAndUpdate(
       req.params.id,
-      { $push: { exercise: req.body } },
+      { $push: { exercises: req.body } },
       { new: true }
     );
     res.status(200).json(updatedWorkout);
@@ -34,7 +34,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 // This app uses Chart.js. This route gets all the exercises associated with a workout and shows the information as a chart on the front end.
-router.get("/range", async ({ req }) => {
+router.get("/range", async ({ res }) => {
   try {
     const Workouts = await db.Workout.find({});
     res.json(Workouts);
