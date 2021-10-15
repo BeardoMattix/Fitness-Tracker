@@ -40,8 +40,12 @@ router.put("/:id", async ({ params, body }, res) => {
 // This app uses Chart.js. This route gets all the exercises associated with a workout and shows the information as a chart on the front end.
 router.get("/range", async ({ res }) => {
   try {
-    const Workouts = await db.Workout.find({});
-    res.json(Workouts);
+    const workouts = await db.Workout.aggregate([
+      {
+        $addFields: { totalDuration: { $sum: "$exercises.duration" } },
+      },
+    ]);
+    res.status(200).json(workouts);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
