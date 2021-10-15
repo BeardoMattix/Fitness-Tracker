@@ -1,5 +1,3 @@
-// const API = require("./api");
-
 const workoutTypeSelect = document.querySelector("#type");
 const cardioForm = document.querySelector(".cardio-form");
 const resistanceForm = document.querySelector(".resistance-form");
@@ -117,6 +115,7 @@ async function handleFormSubmit(event) {
 
   await API.addExercise(workoutData);
   clearInputs();
+  validateInputs();
   toast.classList.add("success");
 }
 
