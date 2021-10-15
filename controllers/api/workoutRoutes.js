@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const db = require("../../models");
 
-// Gets all the workout information from the db ans send a response.
+// Gets all the workout information from the db and send a response.
 router.get("/", async (req, res) => {
   try {
     const workouts = await db.Workout.aggregate([
