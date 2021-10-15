@@ -25,10 +25,10 @@ router.post("/", async ({ body }, res) => {
   }
 });
 // Updates or Adds a workout with information from the user input and adds it to the db.
-router.put("/:id", async ({ params, body }, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const updatedWorkout = await db.Workout.findByIdAndUpdate(
-      params.id,
+      req.params.id,
       { $push: { exercises: req.body } },
       { new: true, runValidators: true }
     );
