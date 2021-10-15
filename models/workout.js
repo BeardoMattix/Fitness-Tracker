@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
-
+// Model for creating a new workout, with the associated fields.
 const workoutSchema = new Schema(
   {
     day: {
@@ -13,7 +13,6 @@ const workoutSchema = new Schema(
       {
         type: {
           type: String,
-          trim: true,
         },
         name: {
           type: String,
@@ -44,7 +43,7 @@ const workoutSchema = new Schema(
 workoutSchema.virtual("totalDuration").get(function () {
   return this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
-  });
+  }, 0);
 });
 const Workout = mongoose.model("Workout", workoutSchema);
 
