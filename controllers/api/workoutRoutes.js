@@ -30,7 +30,7 @@ router.put("/:id", async (req, res) => {
     const updatedWorkout = await db.Workout.findByIdAndUpdate(
       req.params.id,
       { $push: { exercises: req.body } },
-      { new: true, runValidators: true }
+      { new: true }
     );
     res.status(200).json(updatedWorkout);
   } catch (err) {
