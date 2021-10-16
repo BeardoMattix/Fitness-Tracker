@@ -21,7 +21,7 @@ This application uses the MongoDB and Mongoose npm package to manage workouts an
 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[Click here to see the running RWP!](notyet@heroku.com)
+[Click here to see the running Fitness Tracker!](https://floating-springs-76073.herokuapp.com/)
 
 ## Installation :
 
