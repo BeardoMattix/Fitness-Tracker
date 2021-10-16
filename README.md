@@ -48,14 +48,7 @@ The user can track workouts, add any exercises they like, and update workouts as
 
 ## Demo :
 
-### Here
-
-## Credits :
-
-- [ChaseNicks](https://github.com/ChaseNicks)
-- [BeardoMattix](https://github.com/BeardoMattix)
-- [ebront08](https://github.com/ebront08)
-- [Muiasar-Al-Ani](https://github.com/Muiasar-Al-Ani)
+### This demo shows the following features: Creating a new workout, adding to an existing workout, and viewing workouts from the past via charts.js
 
 ## Contributions :
 
@@ -68,4 +61,4 @@ If you have any Question please feel free to contact me:
 
 - [BeardoMattix](https://github.com/BeardoMattix)
 
-&copy; 2021 [Fitness Tracker](https://github.com/BeardoMattix)
+&copy; 2021 [Fitness Tracker](https://github.com/BeardoMattix/Fitness-Tracker)
