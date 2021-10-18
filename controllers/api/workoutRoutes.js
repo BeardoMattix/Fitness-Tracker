@@ -16,7 +16,7 @@ router.get("/api/workouts", async (req, res) => {
 });
 
 // Creates a new workout in the database.
-router.post("/", async ({ body }, res) => {
+router.post("/api/workouts", async ({ body }, res) => {
   try {
     const newWorkout = await db.Workout.create(body);
     res.status(newWorkout);
@@ -39,7 +39,7 @@ router.put("/api/workouts/:id", async (req, res) => {
   }
 });
 // This app uses Chart.js. This route gets all the exercises associated with a workout and shows the information as a chart on the front end.
-router.get("/range", async ({ res }) => {
+router.get("/api/workouts/range", async ({ res }) => {
   try {
     const workouts = await db.Workout.aggregate([
       {
